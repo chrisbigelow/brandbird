@@ -1,5 +1,5 @@
 {
-  "name": "twitter-bot",
+  "name": "brandbird",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.2",
     "request": "^2.83.0",
+    "socket.io": "^2.0.4",
     "twitter": "^1.7.1"
   }
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=0.1' />
+    <link rel='stylesheet' href='/style.css'>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <form>
+      <h1>Search Query</h1>
+      <input id="query"></input>
+      <input type="submit" id="submit" style="display:none"></input>
+  </form>
+  <div id="container"></div>
+
+  <script>
+    let socket = io.connect('http://localhost:3000');
+    let regexp = /((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi;
+
+    socket.on('init', function () {
+      socket.emit('query', 'love');
+    });
+
+    socket.on('tweet', function (data) {
+      let text = data.text.replace(regexp, '<a href="$1" target="_blank">$1</a>');
+      let usr = "<span style='color:#4183C4'>" + '@' + data.user.screen_name + "</span>";
+      $('#container').prepend(usr + " : " + text + "<br>");
+    });
+
+    $("form").submit(function(e) {
+      e.preventDefault();
+      var query = $('#query').val();
+      socket.emit('query', query);
+    })
+
+  </script>
+  
+</body>
+
+</html>

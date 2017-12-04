@@ -1,0 +1,17 @@
+html {
+  font:14px Helvetica Neue;
+  background-color:#eee;
+}
+
+a {
+  color:#999;
+}
+
+input {
+  margin:0.5em;
+}
+
+#container {
+  line-height:1.2em;
+  padding:0.5em;
+}
