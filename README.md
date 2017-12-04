@@ -42,32 +42,32 @@ hundreds or thousands of tweets
 * **Chart JS** for displaying chart info
 * **jQCloud** for word cloud or may hand-roll
 
-##Implementation Timeline
+## Implementation Timeline
 
 Weekend
 
-[ ] Tutorials and API research
-[ ] Get Twitter API requests working
+- [ ] Tutorials and API research
+- [ ] Get Twitter API requests working
 
 Day One
 
-[ ] Get sentiment API functional
-[ ] Get Web page to fetch/display tweets from server
+- [ ] Get sentiment API functional
+- [ ] Get Web page to fetch/display tweets from server
 
 Day Two
 
-[ ] Get tweets displaying in box for different companies and different `result_type`
-[ ] add search bar
+- [ ] Get tweets displaying in box for different companies and different `result_type`
+- [ ] add search bar
 
 Day Three
 
-[ ] Add Tone Chart
-[ ] Add "smart sentences" that give the user insight into consumer emotion
+- [ ] Add Tone Chart
+- [ ] Add "smart sentences" that give the user insight into consumer emotion
 
 Day Four
 
-[ ] Polish Styling
-[ ] Add Word Cloud
+- [ ] Polish Styling
+- [ ] Add Word Cloud
 
 
 
