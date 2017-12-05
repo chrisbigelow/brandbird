@@ -1,12 +1,13 @@
 let Request = require('request');
-let config = require('./config.js');
+let config = require('../config/twitter_config');
 
 let key = config.consumer_key;
 let secret = config.consumer_secret;
+
 //add a colon
 //URL encode the consumer key and the consumer secret according to RFC 1738
 let joinedCreds = key + ':' + secret;
-//
+
 let creds = new Buffer(joinedCreds).toString('base64'); //encode
 let url = 'https://api.twitter.com/oauth2/token';
 

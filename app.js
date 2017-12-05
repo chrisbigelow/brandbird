@@ -1,14 +1,30 @@
 let Twitter = require('twitter');
-let config = require('./config.js');
-const { getRequestBearer } = require('./request_bearer_token');
+let config = require('./config/twitter_config.js');
+const { getRequestBearer } = require('./api/request_bearer_token');
 
 let express = require('express');
 let app = express();
 
-let server = require('http').Server(app);
-let io = require('socket.io')(server);
+
+const path = require('path');
+// const fetch = require('node-fetch');
+const PORT = 3000;
+
+// let server = require('http').Server(app);
+// let io = require('socket.io')(server);
 
 // app.use('/', express.static(__dirname + '/public'));
+
+let { analyzeTweetsViaGoogle } = require('./api/language_api_google');
+let { analyzeTweetsViaIbm } = require('./api/language_api_ibm');
+
+app.use(express.static('public'));
+
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'))
+});
+
 
 // let currentStream = 0;
 // let twitterRequest = new Twitter(config);
@@ -45,43 +61,23 @@ let io = require('socket.io')(server);
 //     });
 // };
 
-app.get('/', function(req, res){
+app.get('/tweets', function(req, res){
 
 
-    const makeTwitterRequest = () => {
 
-      let twitterRequest = new Twitter(config);
-
-      let searchParams = {
-        q: '#trump',
-        count: 100,
-        result_type: 'recent',
-        lang: 'en'
-      };
-
-      twitterRequest.get('search/tweets', searchParams, function(err, data, response) {
-        if(!err) {
-          res.send(data.statuses);
-        } else {
-          console.log(err);
-        }
-      });
-
-    };
-
-    getRequestBearer((err,resp) => {
-      if (err) {
-        return console.log("this is the error message:" + err);
-      } else {
-        config.bearer_token = resp.access_token;
-        makeTwitterRequest();
-
-      }
-    });
+    // analyzeTweetsViaIbm({ text : 'I hate this this is so dumb!'});
 
 });
 
-server.listen(3000);
+app.listen(PORT, () => {
+  console.log(__dirname);
+  console.log('Server listening on ${PORT}');
+});
+
+
+
+
+
 
 
 // .map((status, index) => {
