@@ -10,10 +10,6 @@ const path = require('path');
 // const fetch = require('node-fetch');
 const PORT = 3000;
 
-// let server = require('http').Server(app);
-// let io = require('socket.io')(server);
-
-// app.use('/', express.static(__dirname + '/public'));
 
 let { analyzeTweetsViaGoogle } = require('./api/language_api_google');
 let { analyzeTweetsViaIbm } = require('./api/language_api_ibm');
@@ -22,8 +18,43 @@ app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'))
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
+
+
+
+
+app.get('/tweets', function(req, res){
+
+
+
+// analyzeTweetsViaIbm({ text : 'I hate this this is so dumb!'});
+
+});
+
+app.listen(PORT, () => {
+  console.log(__dirname);
+  console.log('Server listening on ${PORT}');
+});
+
+
+
+
+
+
+
+
+// let server = require('http').Server(app);
+// let io = require('socket.io')(server);
+
+// app.use('/', express.static(__dirname + '/public'));
+
+
+// .map((status, index) => {
+//   console.log('-------------------------');
+//   console.log(`Status #${index}: ` + status.text);
+//   console.log('-------------------------');
+// });
 
 
 // let currentStream = 0;
@@ -60,31 +91,6 @@ app.get('/', (req, res) => {
 //         });
 //     });
 // };
-
-app.get('/tweets', function(req, res){
-
-
-
-    // analyzeTweetsViaIbm({ text : 'I hate this this is so dumb!'});
-
-});
-
-app.listen(PORT, () => {
-  console.log(__dirname);
-  console.log('Server listening on ${PORT}');
-});
-
-
-
-
-
-
-
-// .map((status, index) => {
-//   console.log('-------------------------');
-//   console.log(`Status #${index}: ` + status.text);
-//   console.log('-------------------------');
-// });
 
 
 

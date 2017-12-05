@@ -10,3 +10,13 @@ function component() {
 }
 
 document.body.appendChild(component());
+
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+  
+  
+  
+  
+//   })
