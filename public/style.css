@@ -125,8 +125,9 @@ a:hover
 
 #menu li
 {
-  padding: 10px 0;
-  font-size: 22px;
+  padding: 15px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #menuToggle input:checked ~ ul
@@ -139,6 +140,8 @@ a:hover
 *
 *
 * */
+
+/* tweet area */
 
 #navbar {
   height: 50px;
@@ -154,6 +157,14 @@ a:hover
   margin-top: 6px;
 }
 
-.tweet-area {
-  
+.tweet-item {
+  padding: 10px;
+  border-radius: 29px;
 }
+
+.tweet-id {
+  border: 0.5px solid;
+}
+
+
+/* ********** */

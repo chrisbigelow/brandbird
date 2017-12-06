@@ -59,6 +59,7 @@ const makeTwitterRequest = (query, resultType, cb) => {
       .then(() => requestTweets())
       .then(() => requestTweets())
       .then(() => {
+        console.log(tweetText);
         return cb(tweetText);
       });
 
