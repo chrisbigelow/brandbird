@@ -1,6 +1,6 @@
-let Twitter = require('twitter');
-let config = require('./config/twitter_config.js');
-const { getRequestBearer } = require('./api/request_bearer_token');
+// let Twitter = require('twitter');
+// let config = require('./config/twitter_config.js');
+// const { getRequestBearer } = require('./api/request_bearer_token');
 
 let express = require('express');
 let app = express();
@@ -13,6 +13,7 @@ const PORT = 3000;
 
 let { analyzeTweetsViaGoogle } = require('./api/language_api_google');
 let { analyzeTweetsViaIbm } = require('./api/language_api_ibm');
+let { makeTwitterRequest } = require('./api/twitter_api');
 
 app.use(express.static('public'));
 
@@ -22,19 +23,17 @@ app.get('/', (req, res) => {
 });
 
 
-
-
 app.get('/tweets', function(req, res){
-
-
-
-// analyzeTweetsViaIbm({ text : 'I hate this this is so dumb!'});
-
+  console.log(req.query);
+  let query = req.query.query;
+  let type = req.query.requestType;
+  makeTwitterRequest(query, type, (result) => res.send(result));
 });
+
 
 app.listen(PORT, () => {
   console.log(__dirname);
-  console.log('Server listening on ${PORT}');
+  console.log(`Server listening on ${PORT}`);
 });
 
 
