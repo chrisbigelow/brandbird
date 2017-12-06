@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         success: function(res) {
           res.map((item, index) => {
-            $("#tweet-list").append('<li>'+item.id+'</li>');
-            $("#tweet-list").append('<li>'+item.text+'</li>');
+            $("#menu").append('<li>'+item.id+'</li>');
+            $("#menu").append('<li>'+item.text+'</li>');
           });
         }
       });

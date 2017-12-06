@@ -1,4 +1,4 @@
-// import { request } from 'http';
+
 
 let Twitter = require('twitter');
 let config = require('../config/twitter_config');
@@ -26,11 +26,6 @@ const makeTwitterRequest = (query, resultType, cb) => {
       let tweetText = [];
       let maxId = undefined;
 
-      // for (let requestCount = 0; requestCount < 10; requestCount++) {
-      //}
-
-
-      // const searchTweets = () => {
       const requestTweets = () => {
         return new Promise(function(resolve, reject) {
         
@@ -66,9 +61,6 @@ const makeTwitterRequest = (query, resultType, cb) => {
       .then(() => {
         return cb(tweetText);
       });
-
-     
-
 
     }
 
