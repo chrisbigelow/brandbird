@@ -24,10 +24,21 @@ app.get('/', (req, res) => {
 
 
 app.get('/tweets', function(req, res){
-  console.log(req.query);
   let query = req.query.query;
   let type = req.query.requestType;
-  makeTwitterRequest(query, type, (result) => res.send(result));
+  let tweets = undefined;
+  makeTwitterRequest(query, type, (result) => {
+    tweets = result;
+    let stringTweets = "";
+    tweets.map((item, index) => {
+      stringTweets += item.text;
+    });
+    analyzeTweetsViaIbm({text: stringTweets}, (ibmRes) => {
+      // console.log({ibmAnalytics: ibmRes, tweets: tweets});
+      res.send({ibmAnalytics: ibmRes, tweets: tweets});
+    });
+  });
+
 });
 
 
