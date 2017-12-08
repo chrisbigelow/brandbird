@@ -27,7 +27,7 @@ function getRequestBearer(cb) {
       return cb(err);
     }
     if (resp.statusCode !== 200) {
-      return cb(new Error('Request failed with code ' + resp.statusCode + config.consumer_key + config.consumer_secret));
+      return cb(new Error('Request failed with code ' + resp.statusCode));
     }
     let json = JSON.parse(body);
     return cb(null, json);
