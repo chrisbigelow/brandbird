@@ -1,7 +1,5 @@
-
-
 let Twitter = require('twitter');
-let config = require('../config/twitter_config');
+let config = require('../twitter_config_production');
 const { getRequestBearer } = require('./request_bearer_token');
 var Promise = require('es6-promise').Promise;
 

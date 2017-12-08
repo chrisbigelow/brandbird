@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,9 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@google-cloud/language": "^1.1.0",
-    "canvas": "^1.6.7",
     "chart.js": "^2.7.1",
-    "d3.layout.cloud": "^1.2.0",
+    "dotenv": "^4.0.0",
     "es6-promise": "^4.1.1",
     "express": "^4.16.2",
     "lodash": "^4.17.4",
@@ -21,9 +21,11 @@
     "node-gyp": "^3.6.2",
     "rebuild": "^0.1.2",
     "request": "^2.83.0",
-    "socket.io": "^2.0.4",
     "twitter": "^1.7.1",
     "watson-developer-cloud": "^2.42.0"
+  },
+  "engines": {
+    "node": "6.10.1"
   },
   "devDependencies": {
     "webpack": "^3.10.0"

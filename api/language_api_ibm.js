@@ -1,5 +1,5 @@
 const ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
-const ibmConfig = require('../config/ibm_config');
+const ibmConfig = require('../ibm_config_production');
 
 var toneAnalyzer = new ToneAnalyzerV3(ibmConfig);
 
