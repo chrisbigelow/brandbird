@@ -18,7 +18,8 @@ const makeTwitterRequest = (query, resultType, cb) => {
         return console.log("Request Bearer error message:" + err);
       } else {
 
-        process.env['BEARER_TOKEN'] = resp.access_token;
+        // process.env['BEARER_TOKEN'] = resp.access_token;
+        config.bearer_token = resp.access_token;
         let twitterRequest = new Twitter(config);
 
         let tweetText = [];
