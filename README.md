@@ -2,6 +2,8 @@
 ## JS web app that uses Twitter's API and leverages sentiment APIs to get customer satisfaction information about major companies
 ___
 
+**LIVE LINK:** https://brandbird.herokuapp.com/
+
 ## Overview
 Brandbird is a single page application that enables the user to view tweet sentiment information for major tech companies.
 Upon the selection of a company from the top button fields, Consumer's tweets are is retreived using Twitters "public" API. 
