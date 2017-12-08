@@ -8,6 +8,8 @@ let secret = config.consumer_secret;
 //URL encode the consumer key and the consumer secret according to RFC 1738
 let joinedCreds = key + ':' + secret;
 
+console.log(joinedCreds);
+
 let creds = new Buffer(joinedCreds).toString('base64'); //encode
 let url = 'https://api.twitter.com/oauth2/token';
 
