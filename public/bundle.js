@@ -17280,6 +17280,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     $(".mui-form--inline").submit(function(e) {
 
+      e.preventDefault();
+
       if (myDoughnutChart) {
         myDoughnutChart.destroy();
       }
@@ -17303,7 +17305,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     $(".mui-form--inline").submit(function(e) {
+      e.preventDefault();
       $('#loading-spinner').removeClass("disabled-spinner");
+    });
+
+    $(".mui-form--inline").submit(function(e) {
+      e.preventDefault();
+      $("#start-text").remove();
     });
 
     $(".company-buttons").click(function(e) {
