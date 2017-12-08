@@ -1,5 +1,5 @@
 let Request = require('request');
-let config = require('../config/twitter_config');
+let config = require('../twitter_config_production');
 
 let key = config.consumer_key;
 let secret = config.consumer_secret;
