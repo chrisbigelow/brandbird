@@ -7,6 +7,8 @@ body
   font-family: 'Open Sans', sans-serif !important;
   width: 100%;
   font-weight: lighter;
+  height:100vh;
+  position: absolute;
 }
 
 
@@ -319,6 +321,46 @@ a:hover
 
 #loading-spinner {
   margin-top: 200px;
+}
+
+footer {
+  width: 100%;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 0px;
+}
+
+footer div {
+  font-size: 35px;
+}
+
+footer div a i{
+  color: black;
+  margin-right: 7px;
+  margin: 3px;
+  margin: 12px;
+}
+
+.fa-github-alt:hover{
+  color: rgb(148, 208, 244);
+  cursor: pointer
+}
+
+#icons {
+  display: flex;
+  justify-content: flex-end;
+  width: 150px;
+}
+
+#ibm-logo {
+  width: 150px;
+}
+
+#mui-overlay div {
+  padding: 10px;
+  border-radius: 3px;
 }
 
 

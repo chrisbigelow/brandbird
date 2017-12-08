@@ -19,6 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     $(".mui-form--inline").submit(function(e) {
+
+      if (myDoughnutChart) {
+        myDoughnutChart.destroy();
+      }
+
+      if (myChart) {
+        myChart.destroy();
+      }
+
       let data = getTweetDataFromSearch();
       $.ajax({
         url: "/tweets",
@@ -60,6 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     $(".company-buttons").click(function(e) {
+
+      if (myDoughnutChart) {
+        myDoughnutChart.destroy();
+      }
+
+      if (myChart) {
+        myChart.destroy();
+      }
+
       let buttonId = e.target.value;
       let data = getTweetDataFromButton(buttonId);
       $.ajax({
@@ -97,15 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lab.push(item.tone_name);
         dat.push(item.score);
       });
-
-
-      if (myDoughnutChart) {
-        myDoughnutChart.destroy();
-      }
-
-      if (myChart) {
-        myChart.destroy();
-      }
 
       myChart = new Chart(ctx, {
           type: 'horizontalBar',

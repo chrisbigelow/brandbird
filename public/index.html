@@ -72,8 +72,32 @@
             <canvas id="myDoughnutChart"></canvas>
         </div>
       </section>
-      <!-- <ul id="json"></ul> -->
+      <script>
+          function activateModal() {
+       
+            var modalEl = document.createElement('div');
+            modalEl.style.width = '400px';
+            modalEl.style.height = '300px';
+            modalEl.style.margin = '100px auto';
+            modalEl.style.backgroundColor = '#fff';
+            modalEl.innerHTML = "<h3>BrandBird is a JS web app that uses Twitter's API and leverages IBM's sentiment API to get customer satisfaction information about major companies</h3>" +
+            "<p>1000 of the most recent Tweets are fetched using the search API. This information is then sent to IBM's tone analyzer this data is aggregated in two visual charts</p>" +
+            "<p>Tones include: Anger, Disgust, Fear, Joy, and Sadness";
+            
+            mui.overlay('on', modalEl);
+          
+          }
+      </script>
     </section>
+
+    <footer>
+      <img id="ibm-logo" src="/media/watson_poweredby_black.svg" alt="">
+      <button class="mui-btn mui-btn--fab mui-btn--primary" onclick="activateModal()"><i class="fa fa-question" aria-hidden="true"></i>
+      </button>
+      <div id="icons">
+          <a href="https://github.com/chrisbigelow/brandbird"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      </div>
+    </footer>
 
 
   </body>
