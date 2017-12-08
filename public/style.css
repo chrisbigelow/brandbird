@@ -4,7 +4,7 @@ body
   padding: 0;
   background: #ffffff;
   color: #000000;
-  font-family: "Avenir Next", "Avenir", sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   width: 100%;
   font-weight: lighter;
 }
@@ -145,8 +145,8 @@ a:hover
 /* tweet area */
 
 #navbar {
-  height: 50px;
-  background-color: #009fff;
+  height: 56px;
+  background-color: #94d0f4;
   width: 100%;
   min-width: 800px;
 }
@@ -156,7 +156,7 @@ a:hover
   font-size: 25px;
   margin-left: 35px;
   height: 50px;
-  margin-top: 11px;
+  margin-top: 8px;
 }
 
 .tweet-item {
@@ -176,8 +176,8 @@ a:hover
   display: flex;
   align-items: center;
   float: right;
-  margin-right: 5px;
-  margin-top: -8px;
+  margin-right: 25px;
+  margin-top: -2px;
   
 }
 
@@ -186,6 +186,10 @@ a:hover
   font-size: 17px;
   width: 180px;
   height: 25px;
+}
+
+.mui-btn {
+  margin-left: 11px !important;
 }
 
 #show-tweets {
@@ -203,7 +207,7 @@ a:hover
 }
 
 .mui-select {
-  padding-top: 9px;
+  margin-bottom: 0px !important;
 }
 
 #result-type {
@@ -239,6 +243,15 @@ a:hover
   justify-content: center;
   margin: 0;
   width: 100%;
+  padding-top: 20px;
+}
+
+.company-buttons:hover {
+  background-color: rgb(148, 208, 244) !important;
+}
+
+.active {
+  background-color: #d6ecfb !important;
 }
 
 #look-at-this-graph{
@@ -247,5 +260,11 @@ a:hover
   margin-top: 52px;
 
 }
+
+.mui-form--inline .mui-btn {
+  margin-top: 9px !important;
+}
+   
+
 
 

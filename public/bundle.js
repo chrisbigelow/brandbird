@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return {query: query, requestType: result};
     };
 
-    $("#show-tweets").click(function(e) {
+    $(".mui-form--inline").submit(function(e) {
       let data = getTweetDataFromSearch();
       $.ajax({
         url: "/tweets",
@@ -104,6 +104,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }); 
 
+    $(".company-buttons").click(function(e) {
+        let tablinks = document.getElementsByClassName("company-buttons");
+        console.log(tablinks.length);
+        for (let i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        e.currentTarget.className += " active";
+        console.log(e.currentTarget.className);
+    });
+
 
     const getTweetDataFromButton = (queryValue) => {
       let result = 'popular';
@@ -113,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     $(".company-buttons").click(function(e) {
+   
       let buttonId = e.target.value;
       let data = getTweetDataFromButton(buttonId);
       $.ajax({
@@ -225,6 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
     };
+
+
 
 
 });

@@ -5,6 +5,7 @@
     <title>BrandBird</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     <link href="//cdn.muicss.com/mui-0.9.30/css/mui.min.css" rel="stylesheet" type="text/css" />
     <script src="//cdn.muicss.com/mui-0.9.30/js/mui.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -21,8 +22,14 @@
                   <option value="mixed">Mixed</option>
               </select>
           </div>
-        <input id="search-bar" type="text" placeholder="Search.." name="search">
-        <button id="show-tweets" type="submit">Custom Search <i class="fa fa-search"></i></button>
+          <form class="mui-form--inline">
+              <div class="mui-textfield">
+                <input id="search-bar" type="text">
+              </div>
+              <button class="mui-btn">search</button>
+          </form>
+        <!-- <input id="search-bar" type="text" placeholder="Search.." name="search">
+        <button id="show-tweets" type="submit">Custom Search <i class="fa fa-search"></i></button> -->
       </div>
 
 
