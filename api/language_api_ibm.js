@@ -42,7 +42,7 @@ const analyzeTweetsViaIbm = (req, cb) => {
               final.push({tone_name: item.tone_name, score: (item.score + secValue.score) / 2});
             }
           });
-          console.log(final);
+          // console.log(final);
           return cb(final);
         }
       });

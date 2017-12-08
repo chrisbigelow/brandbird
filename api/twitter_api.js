@@ -31,9 +31,6 @@ const makeTwitterRequest = (query, resultType, cb) => {
           
             twitterRequest.get('search/tweets', searchParams, function(error, data, response) {
               if(!error) {
-                // console.log("got request");
-                // console.log(data.statuses.length);
-                // console.log(searchParams);
                 data.statuses.map((val, index) => {
                   tweetText.push({id: val.id, text: val.text});
                   if (index === (data.statuses.length -1)) {

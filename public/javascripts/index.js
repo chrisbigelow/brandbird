@@ -1,4 +1,6 @@
 import Chart from 'chart.js';
+import { cloud } from 'd3.layout.cloud';
+import wordCount from './process_text';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -29,28 +31,35 @@ document.addEventListener('DOMContentLoaded', () => {
           handleResponese(res);
         }
       });
-    }); 
+    });
+
+    $(".mui-form--inline").submit(function(e) {
+      $('#loading-spinner').removeClass("disabled-spinner");
+    });
+
+    $(".company-buttons").click(function(e) {
+      $("#start-text").remove();
+    });
 
     $(".company-buttons").click(function(e) {
         let tablinks = document.getElementsByClassName("company-buttons");
-        console.log(tablinks.length);
         for (let i = 0; i < tablinks.length; i++) {
           tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
         e.currentTarget.className += " active";
-        console.log(e.currentTarget.className);
+        
+        $('#loading-spinner').removeClass("disabled-spinner");
     });
 
 
     const getTweetDataFromButton = (queryValue) => {
-      let result = 'popular';
+      let result = 'recent';
       let query =  queryValue;
       query = `#${query}`;
       return {query: query, requestType: result};
     };
 
     $(".company-buttons").click(function(e) {
-   
       let buttonId = e.target.value;
       let data = getTweetDataFromButton(buttonId);
       $.ajax({
@@ -68,6 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handleResponese = (res) => {
 
+      // wordCount(res);
+
+      $("#loading-spinner").addClass("disabled-spinner");
+
+      console.log("RESPONSE -----------------------", res);
+
+      $("#menu").empty();
+      $("#menu").append('<li>Tweets:</li>');
       res.tweets.map((item, index) => {
         $("#menu").append('<li class="tweet-id">Tweet ID: '+item.id+'</li>');
         $("#menu").append('<li class="tweet-item">'+item.text+'</li>');
@@ -81,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
         dat.push(item.score);
       });
 
-      console.log("CHART RENDERING>>>");
 
       if (myDoughnutChart) {
         myDoughnutChart.destroy();
@@ -162,9 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         options: donutOptions
       });
 
+
+
     };
-
-
-
-
 });
